@@ -1,0 +1,16 @@
+service: greenfingers-backend
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: eu-west-1
+
+functions:
+  plantList:
+    handler: handler.app
+    events:
+       -http:
+          method: get
+          path: plants
+          cors: true
+
