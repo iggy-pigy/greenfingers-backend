@@ -13,4 +13,8 @@ functions:
           method: get
           path: plants
           cors: true
+       - http:
+          method: post
+          path: plants
+          cors: true
 
