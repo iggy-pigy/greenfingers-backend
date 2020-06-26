@@ -50,6 +50,19 @@ app.get("/plants", function (req, res) {
 });*/
 
 app.post("/plants", function (req, res) {
+  const newPlant = req.body;
+
+  connection.query("INSERT INTO Plant SET ?", [newPlant], function (err, data) {
+    if (err) {
+      response.status(500).json({ error: err });
+    } else {
+      newPlant.id = data.insertId;
+      response.status(201).json({ newPlant });
+    }
+  });
+});
+
+/*
   const name = req.body.name;
   const picture = req.body.picture;
   const description = req.body.description;
@@ -57,7 +70,7 @@ app.post("/plants", function (req, res) {
   const email = req.body.email;
 
   res.status(200).json({ message: `Received a request to add plant ${name} with description ${description}, picture ${picture}, location ${location}, and e-mail ${email}` });
-});
+});*/
 
 
 
