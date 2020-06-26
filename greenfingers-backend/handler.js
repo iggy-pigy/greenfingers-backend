@@ -72,6 +72,17 @@ app.post("/plants", function (req, res) {
   res.status(200).json({ message: `Received a request to add plant ${name} with description ${description}, picture ${picture}, location ${location}, and e-mail ${email}` });
 });*/
 
+app.delete("/plants/:id", function (request, response) {
+  const id = request.params.id;
+
+  connection.query("DELETE FROM Plant WHERE plantId = ? ", [id], function (err) {
+    if (err) {
+      response.status(500).json({ error: err });
+    } else {
+      response.sendStatus(200);
+    }
+  });
+});
 
 
 module.exports.plantApp = serverless(app);

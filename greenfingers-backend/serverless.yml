@@ -21,4 +21,8 @@ functions:
           method: post
           path: plants
           cors: true
+       - http:
+          method: delete
+          path: plants/{id}
+          cors: true
 
