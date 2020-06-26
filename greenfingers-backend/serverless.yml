@@ -7,9 +7,9 @@ provider:
 
 functions:
   plantList:
-    handler: handler.app
+    handler: handler.plantApp
     events:
-       -http:
+       - http:
           method: get
           path: plants
           cors: true
