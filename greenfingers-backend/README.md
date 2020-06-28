@@ -24,7 +24,7 @@ Responds with JSON containing all plants in the Database.
 __________________________________________________________________
 
 **POST /plants**
-https://gbrvvbp9nc.execute-api.eu-west-1.amazonaws.com/dev/tasks
+https://shl5liyt6d.execute-api.eu-west-1.amazonaws.com/dev/plants/
 
 Will create a new plant when sent a JSON payload in the format:
 <pre><code>{
